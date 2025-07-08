@@ -1,0 +1,38 @@
+﻿@model CRUDProductos.Models.Producto
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<div class="col-md-12">
+    <h6 class="text-center">Editar Producto</h6>
+    <hr />
+    <form asp-action="Editar">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="FechaCreacion" />
+        <div class="form-group">
+            <strong><label>Nombre:</label></strong>
+            <input asp-for="Nombre" class="form-control" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <strong><label>Descripción:</label></strong>
+            <input asp-for="Descripcion" class="form-control" />
+            <span asp-validation-for="Descripcion" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <strong><label>Precio:</label></strong>
+            <input asp-for="Precio" class="form-control" />
+            <span asp-validation-for="Precio" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-sm mt-3">Actualizar</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
